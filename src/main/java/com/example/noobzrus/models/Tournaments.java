@@ -2,6 +2,7 @@ package com.example.noobzrus.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -10,6 +11,7 @@ public class Tournaments {
     @Id
     private Integer id;
     private String name;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
     private String rules;
 

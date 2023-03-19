@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>register</title>
+    <title>landing</title>
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.css}" href="/static/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap-grid.css}" href="/static/css/bootstrap-grid.css"/>
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="/static/css/style.css"/>
@@ -35,36 +35,27 @@
             </ul>
         </div>
     </nav>
-    <h1>Register Now</h1>
-    <p>Sign up for an account to participate in our esports tournaments.</p>
+    <h1>Create Tournaments!</h1>
 </header>
 <main>
     <section>
-        <h2>Create an Account</h2>
-        <form action="#" method="POST" th:action="@{/register}" th:object="${user}">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" class="form-control" id="username" name="username" th:field="*{username}" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" th:field="*{email}" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" name="password" th:field="*{password}" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Create Account</button>
+        <h2>Create Tournament</h2>
+        <form action="#" th:action="@{/create}" method="post">
+            <label for="id">Id:</label>
+            <input type="number" id="id" name="id" required>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="rules">Rules:</label>
+            <textarea id="rules" name="rules" required></textarea>
+            <button type="submit">Create Tournament</button>
         </form>
     </section>
-    <section>
-        <h2>Already Have an Account?</h2>
-        <p><a href="#">Login Here</a></p>
-    </section>
+
 </main>
 <footer>
     <p>&copy; 2023 Esports Tournament Hosting and Creation</p>
 </footer>
-<script src="../static/js/form.js" defer></script>
 </body>
 </html>

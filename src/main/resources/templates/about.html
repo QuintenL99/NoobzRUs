@@ -12,37 +12,35 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" th:href="@{/}">Esports Tournament Hosting and Creation</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/tournaments}">Tournaments</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" th:href="@{/about}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/contact}">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/register}">Register Now</a>
-                    </li>
-                </ul>
-            </div>
+        <a class="navbar-brand" th:href="@{/}">The Arena</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/tournaments}">Tournaments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/about}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/contact}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/register}">Register Now</a>
+                </li>
+            </ul>
         </div>
     </nav>
     <div class="jumbotron">
         <div class="container">
             <h1 class="display-3">About Us</h1>
-            <p class="lead">Learn more about Esports Tournament Hosting and Creation.</p>
+            <p class="lead">Learn more about the working wheels of this big company.</p>
         </div>
     </div>
 </header>
@@ -58,11 +56,11 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top" src="team-member-1.jpg" alt="Team Member 1">
+                    <img class="card-img-top" src="/pics/elon.jpg" alt="Team Member 1">
                     <div class="card-body">
-                        <h3 class="card-title">John Smith</h3>
+                        <h3 class="card-title">Quinten Laenen</h3>
                         <p class="card-text">Founder & CEO</p>
-                        <p class="card-text">John has been passionate about esports for over a decade and has extensive
+                        <p class="card-text">Quinten has been passionate about esports for over a decade and has extensive
                             experience in tournament organization and management. He is committed to providing the best
                             possible experience for all players.</p>
                     </div>
@@ -73,17 +71,17 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6">
                         <div class="partner">
-                            <img src="partner-1.png" alt="Partner 1">
+                            <img src="/pics/razer.png" alt="Partner 3" th:height="150" th:width="200">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="partner">
-                            <img src="partner-2.png" alt="Partner 2">
+                            <img src="/pics/stella.png" alt="Partner 3" th:height="150" th:width="200">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="partner">
-                            <img src="/static/pics" alt="Partner 3">
+                            <img src="/pics/samsung.png" alt="Partner 3" th:height="150" th:width="200">
                         </div>
                     </div>
                 </div>
