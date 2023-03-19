@@ -1,0 +1,52 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.css}" href="/static/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap-grid.css}" href="/static/css/bootstrap-grid.css"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="/static/css/style.css"/>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/tournaments}">Tournaments</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+            <li><a th:href="@{/contact}">Contact</a></li>
+            <li><a th:href="@{/register}">Register Now</a></li>
+        </ul>
+    </nav>
+    <h1>Contact Us</h1>
+    <p>Have a question, comment, or suggestion? Get in touch!</p>
+</header>
+<main>
+    <section>
+        <h2>Contact Information</h2>
+        <ul>
+            <li><strong>Address:</strong> 123 Main Street, Anytown USA</li>
+            <li><strong>Email:</strong> contact@esportstournament.com</li>
+            <li><strong>Phone:</strong> 555-1234</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Contact Form</h2>
+        <form action="land.html" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2023 Esports Tournament Hosting and Creation</p>
+</footer>
+</body>
+</html>

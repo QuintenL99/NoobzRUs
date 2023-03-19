@@ -1,0 +1,2 @@
+insert into TOURNAMENTS(ID,NAME,DATE,RULES) values (1,'OWL','2023-06-2','free for all')
+INSERT INTO TOURNAMENTS(ID, NAME, DATE, RULES) VALUES (2, 'MyTournament', '2023-07-01', 'These are the tournament rules')

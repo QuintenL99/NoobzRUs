@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>landing</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.css}" href="/static/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap-grid.css}" href="/static/css/bootstrap-grid.css"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="/static/css/style.css"/>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/tournaments}">Tournaments</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+            <li><a th:href="@{/contact}">Contact</a></li>
+            <li><a th:href="@{/register}">Register Now</a></li>
+        </ul>
+    </nav>
+    <h1>Registration Success!</h1>
+</header>
+<main>
+    <section>
+        <p>Thank you for registering for an account with Esports Tournament Hosting and Creation. You will receive an email shortly with instructions on how to verify and activate your account.</p>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2023 Esports Tournament Hosting and Creation</p>
+</footer>
+</body>
+</html>
