@@ -21,11 +21,11 @@ public class LoginController {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private UserRepository userRepository;
-    @GetMapping(value = {"/user/register","/land"})
+    @GetMapping(value = {"user/register","land"})
     public String register(Model model, Principal principal) {
         if (principal != null) return "redirect:../index";
         model.addAttribute("user", new Userss());
-        return "/user/register";
+        return "user/register";
     }
 
     @PostMapping("/user/register")
@@ -37,19 +37,19 @@ public class LoginController {
         return "redirect:/user/register";
     }
 
-    @GetMapping("/users")
+    @GetMapping("users")
     public String users(Model model) {
         Iterable<Userss> users = userRepository.findAll();
         model.addAttribute("user", users);
         return "users";
     }
-    @GetMapping("/user/login")
+    @GetMapping("user/login")
     public String login(Principal principal, Model model) {
         if (principal != null) return "redirect:../index";
-        return "/user/login";
+        return "user/login";
     }
 
-    @GetMapping("/user/logout")
+    @GetMapping("user/logout")
     public String logout(Principal principal, Model model) {
         if (principal == null) return "redirect:../index";
         return "user/logout";

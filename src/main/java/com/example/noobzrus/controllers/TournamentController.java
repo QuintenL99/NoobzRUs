@@ -19,17 +19,17 @@ public class TournamentController {
     @Autowired
     private TournamentsRepository repository;
 
-    @GetMapping("/tournaments")
+    @GetMapping("tournaments")
     public String tournaments(Model model) {
         Iterable<Tournaments> tournaments = repository.findAll();
         model.addAttribute("tournaments", tournaments);
         return "tournaments";
     }
 
-    @GetMapping("/admin/create")
+    @GetMapping("admin/create")
     public String create(Model model) {
         model.addAttribute("tournament", new Tournaments());
-        return "/admin/create";
+        return "admin/create";
     }
 
     @PostMapping("/admin/create")

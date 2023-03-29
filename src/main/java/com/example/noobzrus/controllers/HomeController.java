@@ -12,7 +12,7 @@ import java.security.Principal;
 @Controller
 public class HomeController {
 
-    @GetMapping("/index")
+    @GetMapping("index")
     public String showUploadForm(Model model, Principal principal) {
         return "index";
     }
