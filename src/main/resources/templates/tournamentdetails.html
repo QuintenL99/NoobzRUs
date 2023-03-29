@@ -25,10 +25,10 @@
 
 <body>
 <div class="container">
-  <h1 th:text="${tournament.getName()}"></h1>
-  <p th:text="${tournament.getRules()}"></p>
-  <p th:text="${tournament.getDate()}"></p>
-  <p th:text="${tournament.getAantalSpelers()}"></p>
+  <h1 th:text="|Naam: ${tournament.getName()}|"></h1>
+  <p th:text="|Regels: ${tournament.getRules()}|"></p>
+  <p th:text="|Datum: ${tournament.getDate()}|"></p>
+  <p th:text="|max deelnemers: ${tournament.getAantalSpelers()}|"></p>
 </div>
 <div th:each="participant : ${names}">
   <p th:text="${participant}"></p>
