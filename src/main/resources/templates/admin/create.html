@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>landing</title>
-    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.css}" href="/static/css/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap-grid.css}" href="/static/css/bootstrap-grid.css"/>
-    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="/static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.css}" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap-grid.css}" href="/css/bootstrap-grid.css"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="/css/style.css"/>
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" th:href="@{/}">The Arena</a>
+        <a class="navbar-brand" th:href="@{/static}">The Arena</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,19 +18,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/}">Home</a>
+                    <a class="nav-link" th:href="@{../static}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/tournaments}">Tournaments</a>
+                    <a class="nav-link" th:href="@{../tournaments}">Tournaments</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/about}">About</a>
+                    <a class="nav-link" th:href="@{../about}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/contact}">Contact</a>
+                    <a class="nav-link" th:href="@{../contact}">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/register}">Register Now</a>
+                    <a class="nav-link" th:href="@{../register}">Register Now</a>
                 </li>
             </ul>
         </div>
@@ -40,15 +40,15 @@
 <main>
     <section>
         <h2>Create Tournament</h2>
-        <form action="#" th:action="@{/create}" method="post">
-            <label for="id">Id:</label>
-            <input type="number" id="id" name="id" required>
+        <form action="#" th:action="@{/admin/create}" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <label for="date">Date:</label>
             <input type="date" id="date" name="date" required>
             <label for="rules">Rules:</label>
             <textarea id="rules" name="rules" required></textarea>
+            <label for="aantalSpelers">spelers:</label>
+            <input type="number" id="aantalSpelers" name="aantalSpelers" required>
             <button type="submit">Create Tournament</button>
         </form>
     </section>

@@ -1,0 +1,64 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Esports Tournaments</title>
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.css}" href="/static/css/bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap-grid.css}" href="/static/css/bootstrap-grid.css"/>
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="/static/css/style.css"/>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" th:href="@{/}">The Arena</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" th:href="@{/}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/tournaments}">Tournaments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/about}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/contact}">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/register}">Register Now</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">users</h1>
+      <p class="lead">Check out our upcoming esports tournaments and register now!</p>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <div class="row">
+      <div th:each="us: ${user}" class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title" th:text="${us.getUsername()}"></h5>
+            <h6 class="card-subtitle mb-2 text-muted"
+                th:text="${us.getEmail()}"></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="bg-dark text-light text-center py-3">
+  <p>&copy; 2023 Esports Tournaments</p>
+</footer>
+</body>
+</html>

@@ -6,15 +6,15 @@ import com.example.noobzrus.repositories.TournamentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
+
+import java.util.List;
 import java.util.Optional;
 
 @Controller
 public class TournamentController {
+
 
     @Autowired
     private TournamentsRepository repository;
@@ -25,25 +25,51 @@ public class TournamentController {
         model.addAttribute("tournaments", tournaments);
         return "tournaments";
     }
-    @GetMapping("/create")
+
+    @GetMapping("/admin/create")
     public String create(Model model) {
         model.addAttribute("tournament", new Tournaments());
-        return "create";
+        return "/admin/create";
     }
-    @PostMapping("/create")
+
+    @PostMapping("/admin/create")
     public String createTournament(@ModelAttribute("tournament") Tournaments tournament) {
         repository.save(tournament);
-        return "redirect:/tournaments";
+        return "redirect:../tournaments";
     }
 
     @GetMapping({"/tournamentdetails/{id}", "/tournamentdetails"})
     public String tournamentdetails(Model model, @PathVariable(required = false) Integer id) {
         if (id == null) return "tournamentdetails";
-
         Optional<Tournaments> tournDB = repository.findById(id);
+        if (tournDB.isEmpty()) {
+            return "tournamentdetails";
+        }
 
-        model.addAttribute("tournament", tournDB.get());
+        Tournaments tournament = tournDB.get();
+        model.addAttribute("tournament", tournament);
+        model.addAttribute("names", tournament.getDeelnemers());
 
         return "tournamentdetails";
     }
+
+    @PostMapping("/tournamentdetails/addName")
+    public String addName(@RequestParam Integer id, @RequestParam String name, Model model) {
+        Optional<Tournaments> tournDB = repository.findById(id);
+        if (!tournDB.isPresent()) {
+            throw new RuntimeException("Tournament not found!");
+        }
+        Tournaments tournament = tournDB.get();
+        if (tournament.getDeelnemers().size() >= tournament.getAantalSpelers()) {
+            model.addAttribute("errorMessage", "Maximum number of players has been reached!");
+            model.addAttribute("tournament", tournament);
+            model.addAttribute("names", tournament.getDeelnemers());
+            return "tournamentdetails";
+        }
+        tournament.getDeelnemers().add(name);
+        repository.save(tournament);
+        return "redirect:/tournamentdetails/" + id;
+    }
+
+
 }
